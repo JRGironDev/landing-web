@@ -1,7 +1,7 @@
 ---
 interface Props {
-	description: string;
-	title: string;
+  description: string;
+  title: string;
 }
 
 const { description, title } = Astro.props;
@@ -9,20 +9,27 @@ const { description, title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background: #fff;
-	}
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("ttf");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  html {
+    font-family: "Space Grotesk", sans-serif;
+    background: #fff;
+  }
 </style>
