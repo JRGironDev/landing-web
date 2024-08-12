@@ -1,4 +1,6 @@
 ---
+import SectionTitle from "@components/SectionTitle.astro"
+
 
 const PROJECTS = [
     {
@@ -103,10 +105,8 @@ const PROJECTS = [
     }]
 ---
 
-<section class="min-h-dvh">
-    <h2 class="w-screen text-7xl mb-4">
-        Proyectos
-    </h2>
+<section>
+    <SectionTitle title="Proyectos" />
 
     {
         PROJECTS.map((project) => (
