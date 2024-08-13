@@ -8,7 +8,7 @@ const PROJECTS = [
         subtitle: "Premios a los invisibles del cine",
         description: "En la gala del Sr. Croma se premian a los invisibles del cine, aquellos que trabajan detrás de las cámaras y que no suelen tener el reconocimiento que merecen. La gala se celebra en el Teatro Principal de Zaragoza y cuenta con la presencia de numerosos actores y actrices del panorama nacional.",
         link: "https://www.youtube.com/results?search_query=gatos",
-        image: "/projects/project1.jpg",
+        image: "/projects/01.png",
         info: [
             {
                 label: "Viewers unicos",
@@ -33,7 +33,7 @@ const PROJECTS = [
         subtitle: "Premios a los invisibles del cine",
         description: "En la gala del Sr. Croma se premian a los invisibles del cine, aquellos que trabajan detrás de las cámaras y que no suelen tener el reconocimiento que merecen. La gala se celebra en el Teatro Principal de Zaragoza y cuenta con la presencia de numerosos actores y actrices del panorama nacional.",
         link: "https://www.youtube.com/results?search_query=gatos",
-        image: "/projects/project2.jpg",
+        image: "/projects/02.png",
         info: [
             {
                 label: "Viewers unicos",
@@ -58,7 +58,7 @@ const PROJECTS = [
         subtitle: "Premios a los invisibles del cine",
         description: "En la gala del Sr. Croma se premian a los invisibles del cine, aquellos que trabajan detrás de las cámaras y que no suelen tener el reconocimiento que merecen. La gala se celebra en el Teatro Principal de Zaragoza y cuenta con la presencia de numerosos actores y actrices del panorama nacional.",
         link: "https://www.youtube.com/results?search_query=gatos",
-        image: "/projects/project3.jpg",
+        image: "/projects/03.png",
         info: [
             {
                 label: "Viewers unicos",
@@ -83,7 +83,7 @@ const PROJECTS = [
         subtitle: "Premios a los invisibles del cine",
         description: "En la gala del Sr. Croma se premian a los invisibles del cine, aquellos que trabajan detrás de las cámaras y que no suelen tener el reconocimiento que merecen. La gala se celebra en el Teatro Principal de Zaragoza y cuenta con la presencia de numerosos actores y actrices del panorama nacional.",
         link: "https://www.youtube.com/results?search_query=gatos",
-        image: "/projects/project4.jpg",
+        image: "/projects/04.png",
         info: [
             {
                 label: "Viewers unicos",
@@ -112,8 +112,9 @@ const PROJECTS = [
         PROJECTS.map((project) => (
         <article class="relative border-t-2 last:border-b-2 border-black">
             <button class="group pl-[60px] ml-14">
-            <div class="-z-10 absolute left-0 h-full w-[60px] bg-primary-green group-hover:w-full transition-all duration-700">
-            </div>
+            <div class="-z-20 absolute left-0 h-full w-[60px] bg-primary-green group-hover:w-full transition-all duration-700" />
+            <div class="-z-10 absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity delay-700 duration-700 ease-project-timing group-hover:opacity-100" 
+                style={`background-image: url(${project.image});`} />
             <div class="py-8">
                 <h3 class="uppercase text-6xl font-bold group-hover:translate-x-8 duration-700 ease-project-timing transition-transform">
                     {project.title}
