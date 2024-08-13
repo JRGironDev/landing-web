@@ -122,10 +122,42 @@ const PROJECTS = [
             style={`background-image: url(${project.image});`}
           />
           <div class="py-8">
-            <h3 class="uppercase tracking-tighter text-8xl font-bold">{project.title}</h3>
+            <h3 class="uppercase tracking-tighter text-8xl font-bold">
+              {project.title}
+            </h3>
             <h4 class="uppercase text-2xl text-left group-hover:opacity-0 transition-opacity duration-700 ease-project-timing">
               {project.subtitle}
             </h4>
+          </div>
+
+          <div class="absolute right-0 border-l border-black h-full w-[300px] flex items-center justify-center">
+            <svg
+              class="arrow text-black group-hover:text-white group-hover:-translate-x-4 transition duration-700 ease-project-timing"
+              fill="none"
+              height="100px"
+              width="100px"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 350 350"
+              xml:space="preserve"
+            >
+              <>
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <path
+                    stroke="currentColor"
+                    id="XMLID_27_"
+                    d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255 s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0 c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"
+                  />{" "}
+                </g>
+              </>
+            </svg>
           </div>
         </button>
       </article>
@@ -134,6 +166,12 @@ const PROJECTS = [
 </section>
 
 <style>
+  .arrow {
+    transition:
+      transform 700ms,
+      color 700ms 700ms;
+  }
+
   article:hover h3 {
     animation: project-title 1.5s cubic-bezier(0.61, 0.03, 0.08, 0.99) both;
   }
