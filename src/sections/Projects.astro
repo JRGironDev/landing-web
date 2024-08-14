@@ -1,4 +1,5 @@
 ---
+import ProjectDetailInfoValue from "@components/ProjectDetailInfoValue.astro";
 import SectionTitle from "@components/SectionTitle.astro";
 
 const PROJECTS = [
@@ -163,6 +164,47 @@ const PROJECTS = [
       </article>
     ))
   }
+
+  <article class="border-black border-y-2 relative flex flex-row h-full">
+    <div class="w-[55%] h-full">
+      <header class="px-28 pt-20">
+        <h2 class="text-7xl font-bold uppercase mb-12 tracking-tighter">
+          La gala del sr. croma <span class="text-primary-green">.</span>
+        </h2>
+
+        <p class="text-xl mb-6">
+          Premios a los invisibles del cine. En la gala del Sr. Croma se premian
+          a los invisibles del cine, aquellos que trabajan detrás de las cámaras
+          y que no suelen tener el reconocimiento que merecen.
+        </p>
+
+        <p class="text-xl mb-6">
+          El teatro se llena de glamour y de estrellas, pero no de las que
+          estamos acostumbrados a ver en las portadas de las revistas. En la
+          gala del Sr. Croma se premian a los invisibles del cine.
+        </p>
+      </header>
+
+      <footer class="flex flex-col mt-24 bg-primary-green justify-center items-center py-12">
+        <div class="p-8">
+          <div class="grid grid-cols-4 gap-16 text-center">
+            <ProjectDetailInfoValue label="Viewers unicos" value="100M" />
+            <ProjectDetailInfoValue label="Visualizaciones" value="200M" />
+            <ProjectDetailInfoValue label="Likes" value="150M" />
+            <ProjectDetailInfoValue label="Comentarios" value="120M" />
+          </div>
+        </div>
+
+        <a href="#" class="py-4 px-14 text-2xl text-primary-green bg-gray-950 uppercase font-bold rounded-full">
+          LINK
+        </a>
+      </footer>
+    </div>
+
+    <figure class="w-[45%] h-full">
+      <img src="/projects/01.png" width="9000px" height="9000px" alt="La gala del sr. croma" />
+    </figure>
+  </article>
 </section>
 
 <style>
