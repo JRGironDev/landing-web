@@ -1,7 +1,21 @@
 ---
 import SectionTitle from "@components/SectionTitle.astro";
+
+const TALENTS = []
 ---
 
-<section>
-    <SectionTitle title="Talentos">
+<section class="border-b-[60px] border-primary-green my-48">
+  <SectionTitle title="Talentos" />
+
+  <ul class="grid grid-cols-10 bg-primary-green">
+    <li class="col-span-1 bg-primary-green">
+      <button>
+        <img
+          class="aspect-square object-top object-cover"
+          src="/projects/03.png"
+          alt="Talento 1"
+        />
+      </button>
+    </li>
+  </ul>
 </section>
