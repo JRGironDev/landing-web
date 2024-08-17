@@ -1,21 +1,319 @@
 ---
 import SectionTitle from "@components/SectionTitle.astro";
+import "node_modules/@glidejs/glide/dist/css/glide.core.min.css";
 
-const TALENTS = []
+const TALENTS = [
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+  {
+    id: "cromawoman",
+    name: "Cromawoman",
+    description:
+      "Cromawoman es una actriz de cine y televisión que ha trabajado en numerosas películas y series de televisión. Ha sido nominada a varios premios y ha ganado varios de ellos. Es una de las actrices más reconocidas de la industria del cine y la televisión.",
+    lema: "La actriz más croma de la industria",
+    audiencia: "1.2M",
+    socials: [
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/cromawoman",
+      },
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/cromawoman",
+      },
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/cromawoman",
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/cromawoman",
+      },
+      {
+        name: "tiktok",
+        link: "https://www.tiktok.com/cromawoman",
+      },
+    ],
+  },
+];
 ---
 
 <section class="border-b-[60px] border-primary-green my-48">
   <SectionTitle title="Talentos" />
 
-  <ul class="grid grid-cols-10 bg-primary-green">
-    <li class="col-span-1 bg-primary-green">
-      <button>
-        <img
-          class="aspect-square object-top object-cover"
-          src="/projects/03.png"
-          alt="Talento 1"
-        />
-      </button>
-    </li>
-  </ul>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides bg-primary-green">
+        {
+          TALENTS.map((talent) => (
+            <li class="glide__slides">
+              <button>
+                <img
+                  class="aspect-[160/100] object-top object-cover"
+                  src="/talents/03.png"
+                  alt={talent.name}
+                />
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <article class="aspect-[20/9] bg-[#171717]"></article>
 </section>
+
+<style>
+  .glide__slide--active {
+    @apply bg-[#171717];
+  }
+</style>
+
+<script>
+  import Glide from "@glidejs/glide";
+
+  const slider = new Glide(".glide", {
+    type: "carousel",
+    focusAt: "center",
+    startAt: 5,
+    perView: 10,
+  }).mount();
+</script>
