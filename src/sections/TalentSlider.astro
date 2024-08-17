@@ -279,15 +279,15 @@ const TALENTS = [
 <section class="border-b-[60px] border-primary-green my-48">
   <SectionTitle title="Talentos" />
 
-  <div class="glide">
+  <div id="talent-slider" class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides bg-primary-green">
         {
-          TALENTS.map((talent) => (
+          TALENTS.map((talent, index) => (
             <li class="glide__slides">
-              <button>
+              <button data-slide={index}>
                 <img
-                  class="aspect-[160/100] object-top object-cover"
+                  class="inline-flex aspect-[160/100] h-full w-full object-top object-cover"
                   src="/talents/03.png"
                   alt={talent.name}
                 />
@@ -298,10 +298,21 @@ const TALENTS = [
       </ul>
     </div>
   </div>
-  <article class="aspect-[20/9] bg-[#171717]"></article>
+  <article class="aspect-[23/9] bg-[#171717] relative">
+    <fugure class="absolute right-0 bottom-0">
+      <img
+        class="object-cover object-center h-auto w-[700px]"
+        src="/talents/03.png"
+        alt="Cromawoman"
+      />
+    </fugure>
+  </article>
 </section>
 
 <style>
+  .glide__slide {
+    transition: background-color 3s;
+  }
   .glide__slide--active {
     @apply bg-[#171717];
   }
@@ -310,10 +321,25 @@ const TALENTS = [
 <script>
   import Glide from "@glidejs/glide";
 
-  const slider = new Glide(".glide", {
+  const slider = document.querySelector("#talent-slider");
+  const glide = new Glide("#talent-slider", {
     type: "carousel",
+    gap: 0,
     focusAt: "center",
-    startAt: 5,
-    perView: 10,
+    startAt: 3,
+    perView: 7,
   }).mount();
+
+  slider?.addEventListener("click", (e) => {
+    console.log(e.target);
+    const clickedElement = e.target as HTMLElement;
+    const isButton = clickedElement.tagName === "BUTTON";
+    const buttonElement = isButton ? clickedElement : clickedElement.closest("button");
+
+    if (buttonElement) {
+      const index = buttonElement.dataset.slide;
+      glide.go(`=${index}`);
+    }
+  });
+
 </script>
