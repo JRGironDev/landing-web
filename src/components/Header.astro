@@ -10,8 +10,43 @@ import Logo from "./Logo.astro";
     <Logo class="h-2" />
   </a>
 
-  <div>
+  <div class="flex items-center justify-center gap-x-4">
     <h1 class="uppercase text-current">Agencia de talento multiplataforma</h1>
+    <button id="toggle-volume" class="hover:scale-125">
+      <svg
+        id="volume-disabled"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="hidden size-8"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M15 8a5 5 0 0 1 0 8"></path><path d="M17.7 5a9 9 0 0 1 0 14"
+        ></path><path
+          d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"
+          fill="white"></path>
+      </svg>
+
+      <svg
+        id="volume-enabled"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-8"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"
+        ></path><path d="M16 10l4 4m0 -4l-4 4" fill="white"></path>
+      </svg>
+    </button>
   </div>
 </header>
 
@@ -19,14 +54,14 @@ import Logo from "./Logo.astro";
   header {
     svg,
     h1 {
-      color: white;
+      color: black;
       transition: color 0.5s ease-in-out;
     }
 
     &.light {
       svg,
       h1 {
-        color: black;
+        color: white;
       }
     }
   }
@@ -35,7 +70,27 @@ import Logo from "./Logo.astro";
 <script>
   const $header = document.querySelector("#landing-header") as HTMLElement;
 
-  const $$sectionElements = document.querySelectorAll("[data-header-theme='dark']");
+  const $$sectionElements = document.querySelectorAll(
+    "[data-header-theme='dark']"
+  );
+
+  const volumeEnabledIcon = document.querySelector(
+    "#volume-enabled"
+  ) as HTMLElement;
+  const volumeDisabledIcon = document.querySelector(
+    "#volume-disabled"
+  ) as HTMLElement;
+  const toggleVolume = document.querySelector("#toggle-volume") as HTMLElement;
+  const video = document.querySelector("#hero-video") as HTMLVideoElement;
+
+  let isEnable = false;
+
+  toggleVolume.addEventListener("click", () => {
+    isEnable = !isEnable;
+    volumeEnabledIcon.classList.toggle("hidden", !isEnable);
+    volumeDisabledIcon.classList.toggle("hidden", isEnable);
+    video.muted = !isEnable; 
+  });
 
   const intersectionOptions = {
     root: null, // elemento <body>
@@ -46,7 +101,7 @@ import Logo from "./Logo.astro";
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const lightMode = !entry.isIntersecting;
-      $header.classList.toggle("light", lightMode); 
+      $header.classList.toggle("light", lightMode);
     });
   }, intersectionOptions);
 

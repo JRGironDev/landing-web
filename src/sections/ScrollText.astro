@@ -1,3 +1,81 @@
-<section>
-    ScrollText
+<section id="text-stop" class="h-[300vh] relative">
+  <div
+    class="flex flex-col justify-center items-center text-4xl font-bold text-center border-red-600 border h-screen sticky top-0"
+  >
+    <div id="step-1" class="step">
+      <h3>xyz</h3>
+    </div>
+
+    <div id="step-2" class="step">
+      <h3>
+        Tres generaciones, tres coordenadas, tres caminos<span
+          class="text-primary-green"
+        >
+          ...
+        </span>
+      </h3>
+    </div>
+
+    <div id="step-3" class="step">
+      <h4><span class="text-primary-green"> ... </span>para Proplayers</h4>
+      <h3>
+        Tu carrera no terminará hasta que acabe la partida<span
+          class="text-primary-green">.</span
+        >
+      </h3>
+    </div>
+
+    <div id="step-4" class="step">
+      <h4><span class="text-primary-green"> ... </span>para Creadores</h4>
+      <h3>
+        Tu contenido no tendrá límites<span class="text-primary-green">.</span>
+      </h3>
+    </div>
+
+    <div id="step-5" class="step">
+      <h4><span class="text-primary-green"> ... </span>para Influencers</h4>
+      <h3>
+        El valor de tu imagen no se medirá en likes<span
+          class="text-primary-green">.</span
+        >
+      </h3>
+    </div>
+  </div>
 </section>
+
+<style>
+  .step {
+    @apply absolute opacity-0;
+  }
+
+  #step-1 {
+    @apply opacity-100;
+  }
+
+  h3 {
+    @apply text-9xl;
+  }
+</style>
+
+<script>
+  import { timeline, scroll } from "motion";
+
+  const sequence = [
+    ["#step-1", { opacity: 0 }, { duration: 0.1 }],
+    ["#step-2", { opacity: 1 }, { duration: 0.1 }],
+    ["#step-2", { opacity: 0 }, { duration: 0.1 }],
+    ["#step-3", { opacity: 1 }, { duration: 0.1 }],
+    ["#step-3", { opacity: 0 }, { duration: 0.1 }],
+    ["#step-4", { opacity: 1 }, { duration: 0.1 }],
+    ["#step-4", { opacity: 0 }, { duration: 0.1 }],
+    ["#step-5", { opacity: 1 }, { duration: 0.1 }],
+    
+  ];
+
+  const onScroll = timeline(sequence);
+
+  scroll(onScroll, {
+    target: document.querySelector("#text-stop"),
+    offset: ["-100px", "end end"],
+  });
+</script>
