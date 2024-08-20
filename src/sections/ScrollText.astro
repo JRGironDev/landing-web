@@ -3,7 +3,9 @@
     class="flex flex-col justify-center items-center text-4xl font-bold text-center border-red-600 border h-screen sticky top-0"
   >
     <div id="step-1" class="step">
-      <h3>xyz</h3>
+      <h3 class="flex gap-x-4 overflow-hidden">
+        <span>x</span><span>y</span><span>z</span>
+      </h3>
     </div>
 
     <div id="step-2" class="step">
@@ -50,6 +52,11 @@
 
   #step-1 {
     @apply opacity-100;
+
+    & span {
+      @apply leading-relaxed;
+      transform: translateY(100%);
+    }
   }
 
   h3 {
@@ -59,17 +66,30 @@
 
 <script>
   import { timeline, scroll } from "motion";
+  import { transform } from "typescript";
 
   const sequence = [
-    ["#step-1", { opacity: 0 }, { duration: 0.1 }],
+    [
+      "#step-1 h3 span:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 0.1 },
+    ],
+    [
+      "#step-1 h3 span:nth-child(2)",
+      { transform: "translateY(0%)" },
+      { duration: 0.1 },
+    ],
+    [
+      "#step-1 h3 span:nth-child(3)",
+      { transform: "translateY(0%)" },
+      { duration: 0.1 },
+    ],
     ["#step-2", { opacity: 1 }, { duration: 0.1 }],
-    ["#step-2", { opacity: 0 }, { duration: 0.1 }],
     ["#step-3", { opacity: 1 }, { duration: 0.1 }],
     ["#step-3", { opacity: 0 }, { duration: 0.1 }],
     ["#step-4", { opacity: 1 }, { duration: 0.1 }],
     ["#step-4", { opacity: 0 }, { duration: 0.1 }],
     ["#step-5", { opacity: 1 }, { duration: 0.1 }],
-    
   ];
 
   const onScroll = timeline(sequence);
