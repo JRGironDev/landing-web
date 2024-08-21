@@ -66,7 +66,6 @@
 
 <script>
   import { timeline, scroll } from "motion";
-  import { transform } from "typescript";
 
   const sequence = [
     [
@@ -77,12 +76,27 @@
     [
       "#step-1 h3 span:nth-child(2)",
       { transform: "translateY(0%)" },
-      { duration: 0.1 },
+      { duration: 0.1, at: 0.01 },
     ],
     [
       "#step-1 h3 span:nth-child(3)",
       { transform: "translateY(0%)" },
-      { duration: 0.1 },
+      { duration: 0.1, at: 0.02 },
+    ],
+    [
+      "#step-1 h3 span:first-child",
+      { transform: "translateY(-100%)" },
+      { duration: 0.1, at: 0.20 },
+    ],
+    [
+      "#step-1 h3 span:nth-child(2)",
+      { transform: "translateY(-100%)" },
+      { duration: 0.1, at: 0.21 },
+    ],
+    [
+      "#step-1 h3 span:nth-child(3)",
+      { transform: "translateY(-100%)" },
+      { duration: 0.1, at: 0.22 },
     ],
     ["#step-2", { opacity: 1 }, { duration: 0.1 }],
     ["#step-3", { opacity: 1 }, { duration: 0.1 }],
@@ -96,6 +110,6 @@
 
   scroll(onScroll, {
     target: document.querySelector("#text-stop"),
-    offset: ["-100px", "end end"],
+    offset: ["-400px", "end end"],
   });
 </script>
