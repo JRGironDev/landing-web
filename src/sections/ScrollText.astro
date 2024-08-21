@@ -9,35 +9,39 @@
     </div>
 
     <div id="step-2" class="step">
-      <h3>
-        Tres generaciones, tres coordenadas, tres caminos<span
-          class="text-primary-green"
-        >
-          ...
-        </span>
+      <h3 class="overflow-hidden">
+        <span>Tres generaciones, </span>
+      </h3>
+      <h3 class="overflow-hidden">
+        <span>tres coordenadas, </span>
+      </h3>
+      <h3 class="overflow-hidden">
+        <span>tres caminos <span class="text-primary-green">...</span></span>
       </h3>
     </div>
 
     <div id="step-3" class="step">
       <h4><span class="text-primary-green"> ... </span>para Proplayers</h4>
-      <h3>
-        Tu carrera no terminará hasta que acabe la partida<span
-          class="text-primary-green">.</span
-        >
+      <h3 class="overflow-hidden">
+        <span>
+          Tu carrera no terminará<br> hasta que acabe la partida<span
+            class="text-primary-green">.</span
+          >
+        </span>
       </h3>
     </div>
 
     <div id="step-4" class="step">
       <h4><span class="text-primary-green"> ... </span>para Creadores</h4>
       <h3>
-        Tu contenido no tendrá límites<span class="text-primary-green">.</span>
+        Tu contenido no se perderá<br> entre scrolls infinitos<span class="text-primary-green">.</span>
       </h3>
     </div>
 
     <div id="step-5" class="step">
       <h4><span class="text-primary-green"> ... </span>para Influencers</h4>
       <h3>
-        El valor de tu imagen no se medirá en likes<span
+        El valor de tu imagen<br> no se medirá en likes<span
           class="text-primary-green">.</span
         >
       </h3>
@@ -50,10 +54,29 @@
     @apply absolute opacity-0;
   }
 
+  span {
+    @apply inline-block;
+  }
+
   #step-1 {
     @apply opacity-100;
 
     & span {
+      @apply leading-relaxed;
+      transform: translateY(100%);
+    }
+  }
+
+  #step-2 {
+    & h3 span {
+      @apply leading-relaxed;
+      transform: translateY(100%);
+    }
+  }
+
+  #step-3 {
+    & h4 span,
+    & h3 span {
       @apply leading-relaxed;
       transform: translateY(100%);
     }
@@ -86,7 +109,7 @@
     [
       "#step-1 h3 span:first-child",
       { transform: "translateY(-100%)" },
-      { duration: 0.1, at: 0.20 },
+      { duration: 0.1, at: 0.2 },
     ],
     [
       "#step-1 h3 span:nth-child(2)",
@@ -98,12 +121,24 @@
       { transform: "translateY(-100%)" },
       { duration: 0.1, at: 0.22 },
     ],
-    ["#step-2", { opacity: 1 }, { duration: 0.1 }],
-    ["#step-3", { opacity: 1 }, { duration: 0.1 }],
-    ["#step-3", { opacity: 0 }, { duration: 0.1 }],
-    ["#step-4", { opacity: 1 }, { duration: 0.1 }],
-    ["#step-4", { opacity: 0 }, { duration: 0.1 }],
-    ["#step-5", { opacity: 1 }, { duration: 0.1 }],
+    ["#step-2", { opacity: 1 }, { duration: 0.0001, at: 0.25 }],
+    [
+      "#step-2 h3:first-child span",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.25 },
+    ],
+    [
+      "#step-2 h3:nth-child(2) span",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.3 },
+    ],
+    [
+      "#step-2 h3:nth-child(3) span",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.35 },
+    ],
+    ["#step-2", { opacity: 0 }, { duration: 0.0001, at: 0.45 }],
+    ["#step-3", { opacity: 1 }, { duration: 0.0001, at: 0.45 }],
   ];
 
   const onScroll = timeline(sequence);
