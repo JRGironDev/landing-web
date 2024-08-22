@@ -21,10 +21,14 @@
     </div>
 
     <div id="step-3" class="step">
-      <h4><span class="text-primary-green"> ... </span>para Proplayers</h4>
+      <h4>
+        <span
+          ><span class="text-primary-green mr-2"> ... </span>para Proplayers</span
+        >
+      </h4>
       <h3 class="overflow-hidden">
         <span>
-          Tu carrera no terminará<br> hasta que acabe la partida<span
+          Tu carrera no terminará<br /> hasta que acabe la partida<span
             class="text-primary-green">.</span
           >
         </span>
@@ -32,18 +36,28 @@
     </div>
 
     <div id="step-4" class="step">
-      <h4><span class="text-primary-green"> ... </span>para Creadores</h4>
-      <h3>
-        Tu contenido no se perderá<br> entre scrolls infinitos<span class="text-primary-green">.</span>
+      <h4><span
+        ><span class="text-primary-green mr-2"> ... </span>para Creadores</span></h4>
+      <h3 class="overflow-hidden">
+        <span>
+          Tu contenido no se perderá<br /> entre scrolls infinitos<span
+            class="text-primary-green">.</span
+          >
+        </span>
       </h3>
     </div>
 
     <div id="step-5" class="step">
-      <h4><span class="text-primary-green"> ... </span>para Influencers</h4>
-      <h3>
-        El valor de tu imagen<br> no se medirá en likes<span
-          class="text-primary-green">.</span
+      <h4><span
         >
+        <span class="text-primary-green mr-2"> ... </span>para Influencers</span>
+      </h4>
+      <h3 class="overflow-hidden">
+        <span>
+          El valor de tu imagen<br /> no se medirá en likes<span
+            class="text-primary-green">.</span
+          >
+        </span>
       </h3>
     </div>
   </div>
@@ -54,6 +68,7 @@
     @apply absolute opacity-0;
   }
 
+  h4,
   span {
     @apply inline-block;
   }
@@ -74,8 +89,8 @@
     }
   }
 
-  #step-3 {
-    & h4 span,
+  #step-3, #step-4, #step-5 {
+    & h4 > span,
     & h3 span {
       @apply leading-relaxed;
       transform: translateY(100%);
@@ -139,6 +154,40 @@
     ],
     ["#step-2", { opacity: 0 }, { duration: 0.0001, at: 0.45 }],
     ["#step-3", { opacity: 1 }, { duration: 0.0001, at: 0.45 }],
+    [
+      "#step-3 h4",
+      { transform: "translateY(-200%)" },
+      { duration: 0.1, at: 0.5 },
+    ],
+    [
+      "#step-3 h3 span:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.55 },
+    ],
+    ["#step-3", { opacity: 0 }, { duration: 0.0001, at: 0.7 }],
+    ["#step-4", { opacity: 1 }, { duration: 0.0001, at: 0.7 }],
+    [
+      "#step-4 h4",
+      { transform: "translateY(-200%)" },
+      { duration: 0.1, at: 0.7 },
+    ],
+    [
+      "#step-4 h3 span:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.75 },
+    ],
+    ["#step-4", { opacity: 0 }, { duration: 0.0001, at: 0.85 }],
+    ["#step-5", { opacity: 1 }, { duration: 0.0001, at: 0.85 }],
+    [
+      "#step-5 h4",
+      { transform: "translateY(-200%)" },
+      { duration: 0.1, at: 0.85 },
+    ],
+    [
+      "#step-5 h3 span:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 0.1, at: 0.90 },
+    ],
   ];
 
   const onScroll = timeline(sequence);
