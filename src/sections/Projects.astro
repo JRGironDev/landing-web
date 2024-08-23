@@ -113,98 +113,114 @@ const PROJECTS = [
 <section>
   <SectionTitle title="Proyectos" />
 
-  {
-    PROJECTS.map((project) => (
-      <article class="relative border-t-2 last:border-b-2 border-black">
-        <button class="group pl-[60px] ml-14 flex">
-          <div class="-z-20 absolute left-0 h-full w-[60px] bg-primary-green group-hover:w-full transition-all duration-700 ease-project-timing" />
-          <div
-            class="-z-10 absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity delay-700 duration-700 ease-project-timing group-hover:opacity-100"
-            style={`background-image: url(${project.image});`}
-          />
-          <div class="py-8">
-            <h3 class="uppercase tracking-tighter text-8xl font-bold">
-              {project.title}
-            </h3>
-            <h4 class="uppercase text-2xl text-left group-hover:opacity-0 transition-opacity duration-700 ease-project-timing">
-              {project.subtitle}
-            </h4>
-          </div>
+  <div id="project-container" class="flex bg-white z-10 relative">
+    <div id="project-list" class="w-screen flex-shrink-0">
+      {
+        PROJECTS.map((project, index) => (
+          <article class="relative border-t-2 last:border-b-2 border-black">
+            <button data-id="{index}" class="group pl-[60px] ml-14 flex">
+              <div class="-z-20 absolute left-0 h-full w-[60px] bg-primary-green group-hover:w-full transition-all duration-700 ease-project-timing" />
+              <div
+                class="-z-10 absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity delay-700 duration-700 ease-project-timing group-hover:opacity-100"
+                style={`background-image: url(${project.image});`}
+              />
+              <div class="py-8">
+                <h3 class="uppercase tracking-tighter text-8xl font-bold">
+                  {project.title}
+                </h3>
+                <h4 class="uppercase text-2xl text-left group-hover:opacity-0 transition-opacity duration-700 ease-project-timing">
+                  {project.subtitle}
+                </h4>
+              </div>
 
-          <div class="absolute right-0 border-l border-black h-full w-[300px] flex items-center justify-center">
-            <svg
-              class="arrow text-black group-hover:text-white group-hover:-translate-x-4 transition duration-700 ease-project-timing"
-              fill="none"
-              height="100px"
-              width="100px"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 350 350"
-              xml:space="preserve"
-            >
-              <>
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    stroke="currentColor"
-                    id="XMLID_27_"
-                    d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255 s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0 c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"
-                  />{" "}
-                </g>
-              </>
-            </svg>
-          </div>
-        </button>
-      </article>
-    ))
-  }
-
-  <article class="border-black border-y-2 relative flex flex-row h-full">
-    <div class="w-[55%] h-full">
-      <header class="px-28 pt-20">
-        <h2 class="text-7xl font-bold uppercase mb-12 tracking-tighter">
-          La gala del sr. croma <span class="text-primary-green">.</span>
-        </h2>
-
-        <p class="text-xl mb-6">
-          Premios a los invisibles del cine. En la gala del Sr. Croma se premian
-          a los invisibles del cine, aquellos que trabajan detrás de las cámaras
-          y que no suelen tener el reconocimiento que merecen.
-        </p>
-
-        <p class="text-xl mb-6">
-          El teatro se llena de glamour y de estrellas, pero no de las que
-          estamos acostumbrados a ver en las portadas de las revistas. En la
-          gala del Sr. Croma se premian a los invisibles del cine.
-        </p>
-      </header>
-
-      <footer class="flex flex-col mt-24 bg-primary-green justify-center items-center py-12">
-        <div class="p-8">
-          <div class="grid grid-cols-4 gap-16 text-center">
-            <ProjectDetailInfoValue label="Viewers unicos" value="100M" />
-            <ProjectDetailInfoValue label="Visualizaciones" value="200M" />
-            <ProjectDetailInfoValue label="Likes" value="150M" />
-            <ProjectDetailInfoValue label="Comentarios" value="120M" />
-          </div>
-        </div>
-
-        <a href="#" class="py-4 px-14 text-2xl text-primary-green bg-gray-950 uppercase font-bold rounded-full">
-          LINK
-        </a>
-      </footer>
+              <div class="absolute right-0 border-l border-black h-full w-[300px] flex items-center justify-center">
+                <svg
+                  class="arrow text-black group-hover:text-white group-hover:-translate-x-4 transition duration-700 ease-project-timing"
+                  fill="none"
+                  height="100px"
+                  width="100px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 350 350"
+                  xml:space="preserve"
+                >
+                  <>
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <path
+                        stroke="currentColor"
+                        id="XMLID_27_"
+                        d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255 s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0 c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"
+                      />{" "}
+                    </g>
+                  </>
+                </svg>
+              </div>
+            </button>
+          </article>
+        ))
+      }
     </div>
+    <article
+      class="border-black border-y-2 relative flex flex-row h-full w-screen flex-shrink-0"
+    >
+      <div class="w-[55%] flex flex-col justify-between h-screen">
+        <header class="px-28 pt-20">
+          <h2 class="text-7xl font-bold uppercase mb-12 tracking-tighter">
+            La gala del sr. croma <span class="text-primary-green">.</span>
+          </h2>
 
-    <figure class="w-[45%] h-full">
-      <img src="/projects/01.png" class="h-full" width="9000px" height="9000px" alt="La gala del sr. croma" />
-    </figure>
-  </article>
+          <p class="text-xl mb-6">
+            Premios a los invisibles del cine. En la gala del Sr. Croma se
+            premian a los invisibles del cine, aquellos que trabajan detrás de
+            las cámaras y que no suelen tener el reconocimiento que merecen.
+          </p>
+
+          <p class="text-xl mb-6">
+            El teatro se llena de glamour y de estrellas, pero no de las que
+            estamos acostumbrados a ver en las portadas de las revistas. En la
+            gala del Sr. Croma se premian a los invisibles del cine.
+          </p>
+        </header>
+
+        <footer
+          class="flex flex-col mt-24 bg-primary-green justify-center items-center py-12"
+        >
+          <div class="p-8">
+            <div class="grid grid-cols-4 gap-16 text-center">
+              <ProjectDetailInfoValue label="Viewers unicos" value="100M" />
+              <ProjectDetailInfoValue label="Visualizaciones" value="200M" />
+              <ProjectDetailInfoValue label="Likes" value="150M" />
+              <ProjectDetailInfoValue label="Comentarios" value="120M" />
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="py-4 px-14 text-2xl text-primary-green bg-gray-950 uppercase font-bold rounded-full"
+          >
+            LINK
+          </a>
+        </footer>
+      </div>
+
+      <figure class="w-[45%] h-screen">
+        <img
+          src="/projects/02.png"
+          class="w-full h-screen object-fill"
+          width="9000px"
+          height="9000px"
+          alt="La gala del sr. croma"
+        />
+      </figure>
+    </article>
+  </div>
 </section>
 
 <style>
@@ -216,6 +232,13 @@ const PROJECTS = [
 
   article:hover h3 {
     animation: project-title 1.5s cubic-bezier(0.61, 0.03, 0.08, 0.99) both;
+  }
+
+  #project-container {
+    transition: transform 700ms ease;
+    &.slide-in {
+      transform: translateX(-100%);
+    }
   }
 
   @keyframes project-title {
@@ -231,3 +254,15 @@ const PROJECTS = [
     }
   }
 </style>
+
+<script>
+  const container = document.getElementById("project-container") as HTMLElement;
+  const list = document.getElementById("project-list") as HTMLElement;
+  const buttons = list.querySelectorAll("button");
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", (e) => {
+      container.classList.add("slide-in");
+    });
+  });
+</script>
